@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:news_app/providers/SearchProvider.dart';
 import 'package:news_app/ui/home/settings/SettingsFragment.dart';
 import 'package:provider/provider.dart';
-import 'package:shimmer/shimmer.dart';
 import 'HomeDrawer.dart';
 import 'categories/CategoriesFragment.dart';
 import 'categories/Category.dart';
@@ -88,6 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Container(
       width: double.infinity,
+      height: 40,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Colors.white,
@@ -98,7 +98,6 @@ class _HomeScreenState extends State<HomeScreen> {
         style: const TextStyle(color: Colors.black87, fontSize: 20),
         decoration: InputDecoration(
           hintText: "Search...",
-          fillColor: Colors.transparent,
           prefixIcon: IconButton(
               onPressed: () {
                 setState(() {

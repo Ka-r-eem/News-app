@@ -21,7 +21,9 @@ class TabWidget extends StatelessWidget {
       ),
       child: Text(source.name??"",
       style: TextStyle(
-        color: isSelected ? Colors.white:Theme.of(context).primaryColor
+        fontSize: 18,
+        color: isSelected ? Colors.white:Theme.of(context).primaryColor,
+            fontFamily: "KOUFIBD"
       ),),
     );
   }

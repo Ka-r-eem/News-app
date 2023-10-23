@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/providers/ColorProvider.dart';
+import 'package:provider/provider.dart';
 
 typedef OnMenuItemClick = void Function(MenuItem clickedItemPos);
 
@@ -9,6 +11,7 @@ class HomeDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var colorProvider = Provider.of<ColorProvider>(context);
     return Drawer(
       child: Container(
         color: Colors.white,
@@ -16,13 +19,13 @@ class HomeDrawer extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 vertical:48 ,
               ),
 
               alignment: Alignment.center,
               color: Theme.of(context).primaryColor,
-              child: Text('News App',
+              child: const Text('News App',
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 24,
@@ -32,8 +35,10 @@ class HomeDrawer extends StatelessWidget {
             InkWell(
               onTap: (){
                 onMenuItemClick(MenuItem.categories);
+                colorProvider.changeThemeColor(Color(0xFF39A552));
+
               },
-              child: Row(
+              child: const Row(
                 children: [
                   Icon(Icons.list,size: 32,),
                   Text('Categories',
@@ -44,12 +49,12 @@ class HomeDrawer extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 12,),
+            const SizedBox(height: 12,),
             InkWell(
               onTap: (){
                 onMenuItemClick(MenuItem.settings);
               },
-              child: Row(
+              child: const Row(
                 children: [
                   Icon(Icons.settings,size: 32,),
                   Text('Settings',
